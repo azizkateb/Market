@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TrendingComponent } from './trending/trending.component';
@@ -11,7 +10,7 @@ import { FootComponent } from "./foot/foot.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, SideNavComponent, TrendingComponent, ProductsComponent, PayementComponent, ContactComponent, FootComponent],
+  imports: [ HomeComponent, SideNavComponent, TrendingComponent, ProductsComponent, PayementComponent, ContactComponent, FootComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']  // fixed from styleUrl
 })
