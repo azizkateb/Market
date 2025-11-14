@@ -1,0 +1,13 @@
+<div class="parent" [class.nav-open]="menuOpen">
+  <div class="sidenav">
+    <app-side-nav (menuToggled)="menuOpen = $event"></app-side-nav>
+  </div>
+  <div class="home"><app-home></app-home></div>
+  <div class="trending"><app-trending></app-trending></div>
+  <div class="products"><app-products></app-products></div>
+  <div class="PaymentMethode"><app-payement></app-payement></div>
+  <div class="contactUs"><app-contact></app-contact></div>
+  <div class="foot"><app-foot></app-foot></div>
+</div>
+
+<router-outlet></router-outlet>

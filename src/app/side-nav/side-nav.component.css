@@ -1,0 +1,140 @@
+/* --- Font & Base --- */
+:host {
+  font-family: "Poppins", "Montserrat", sans-serif;
+}
+
+/* --- Toggle Button --- */
+.toggle {
+  position: fixed;
+  top: 20px;
+  left: 5px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 130;
+  transition: transform 0.3s ease;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #a600ff, #6b00b6);
+  border-radius: 6px;
+  box-shadow: 0 0 6px #a600ff, 0 0 12px #6b00b6;
+  transition: all 0.3s ease;
+}
+
+/* Animate bars when menuOpen = true */
+.toggle.open #bar1 {
+  transform: translateY(14px) rotate(-45deg);
+}
+.toggle.open #bar2 {
+  opacity: 0;
+}
+.toggle.open #bar3 {
+  transform: translateY(-14px) rotate(45deg);
+}
+
+/* Glow effect on hover */
+.toggle:hover .bars {
+  box-shadow: 0 0 10px #a600ff, 0 0 20px #6b00b6;
+}
+
+/* --- Overlay --- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+  z-index: 100;
+}
+
+/* --- Side Navigation --- */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 400px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a001f, #330033);
+  color: #fff;
+  padding: 50px 25px;
+  transition: left 0.35s ease, box-shadow 0.3s ease;
+  z-index: 110;
+  box-shadow: 5px 0 25px rgba(107, 0, 182, 0.5);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.side-nav.open {
+  left: 0;
+}
+
+/* --- Close Button --- */
+.side-nav .close-btn {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ff7aff;
+  cursor: pointer;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+}
+
+.side-nav .close-btn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #a600ff, 0 0 20px #6b00b6;
+}
+
+/* --- Menu Links --- */
+.side-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.side-nav ul li a {
+  color: #e0cfff;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 10px 12px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Hover & active effects */
+.side-nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  transform: translateX(6px);
+  box-shadow: 0 0 12px #a600ff, 0 0 20px #6b00b6;
+}
+
+/* Optional: add a subtle glow to the side nav itself */
+.side-nav {
+  box-shadow: 0 0 40px rgba(166, 0, 255, 0.25);
+}
+
+/* --- Responsive --- */
+@media(max-width: 768px){
+  .side-nav {
+    width: 240px;
+    padding: 40px 20px;
+  }
+  .side-nav ul li a {
+    font-size: 19px;
+  }
+  .toggle {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,48 @@
+.trending-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #0f0f0f;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.track {
+  display: inline-flex; /* inline-flex ensures the row has natural width */
+  animation: scrollTrain 18s linear infinite;
+}
+
+.slide {
+  flex: 0 0 auto;
+  margin: 0 15px; /* spacing between images */
+}
+
+.slide img {
+  height: 160px;
+  width: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.08);
+}
+
+/* Smooth infinite scroll */
+@keyframes scrollTrain {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%); /* move exactly half the track (first set) */
+  }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .slide img { height: 120px; }
+}
+
+@media (max-width: 600px) {
+  .slide img { height: 90px; }
+}

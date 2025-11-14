@@ -1,0 +1,20 @@
+<!-- Menu Button -->
+<div class="toggle" (click)="toggleMenu()" [class.open]="menuOpen">
+    <div id="bar1" class="bars"></div>
+    <div id="bar2" class="bars"></div>
+    <div id="bar3" class="bars"></div>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" *ngIf="menuOpen" (click)="toggleMenu()"></div>
+
+<!-- Side Navigation -->
+<aside class="side-nav" [class.open]="menuOpen">
+  <ul>
+    <li><a href="#home" (click)="toggleMenu()">Home</a></li>
+    <li><a href="#products" (click)="toggleMenu()">Shop</a></li>
+    <li><a href="#Categories" (click)="toggleMenu()">Categories</a></li>
+    <li><a href="#trending" (click)="toggleMenu()">Trending</a></li>
+    <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+  </ul>
+</aside>

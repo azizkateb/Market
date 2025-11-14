@@ -1,0 +1,55 @@
+.parent {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+}
+
+.sidenav {
+  grid-column: 1 / 2;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+.home, .trending, .products, .PaymentMethode, .contactUs, .foot {
+  grid-column: 2 / 3;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+.contactUs{
+  display: flex;
+  justify-content: center;
+}
+
+.home { background-color: #111; }
+.trending { background-color: #111; color: #fff; }
+.products { background-color: #111; color: #fff; }
+.PaymentMethode { background-color: #111; color: #fff; }
+.contactUs { background-color: #111; color: #fff; }
+.foot { background-color: #111; color: #fff; }
+
+/* make container scrollable */
+.parent > div:not(.sidenav) {
+  overflow: auto;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .parent {
+    grid-template-columns: 1fr;
+  }
+  .sidenav {
+    display: none;
+  }
+  .home, .trending, .products, .PaymentMethode, .contactUs, .foot {
+    grid-column: 1 / 2;
+  }
+}
+.parent.nav-open > :not(.sidenav) {
+  z-index: -1;
+  position: relative; 
+}
